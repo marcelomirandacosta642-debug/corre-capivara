@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Corre Capivara</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- SDK do CrazyGames: fora do site deles ele fica desligado e o jogo usa anúncios simulados. -->
+  <script src="https://sdk.crazygames.com/crazygames-sdk-v3.js"></script>
+</head>
+<body>
+  <main class="stage" id="stage">
+    <canvas id="game" width="800" height="300" aria-label="Área do jogo"></canvas>
+    <div class="hud"><span id="score">0</span><small>recorde <span id="best">0</span></small></div>
+
+    <div class="overlay" id="menu">
+      <div class="box">
+        <h1>Corre Capivara</h1>
+        <p>Toque na tela, aperte espaço ou seta para cima para pular.</p>
+        <button class="primary" id="startBtn">Começar</button>
+      </div>
+    </div>
+
+    <div class="overlay" id="over" hidden>
+      <div class="box">
+        <h2>Bateu!</h2>
+        <p>Você fez <b id="finalScore">0</b> pontos.</p>
+        <button class="reward" id="rewardBtn">▶ Ver anúncio e continuar</button>
+        <button class="ghost" id="againBtn">Jogar de novo</button>
+      </div>
+    </div>
+
+    <div class="overlay" id="fakeAd" hidden>
+      <div class="box">
+        <span class="adtag" id="fakeAdKind">Anúncio simulado</span>
+        <div class="adfake">AD</div>
+        <button class="ghost" id="fakeAdClose" disabled>Aguarde</button>
+      </div>
+    </div>
+  </main>
+
+  <script src="src/config.js"></script>
+  <script src="src/ads.js"></script>
+  <script src="src/game.js"></script>
+</body>
+</html>
