@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -11,22 +11,22 @@
 <body>
   <main class="stage" id="stage">
     <canvas id="game" width="800" height="300" aria-label="Área do jogo"></canvas>
-    <div class="hud"><span id="score">0</span><small>recorde <span id="best">0</span></small></div>
+    <div class="hud"><span id="score">0</span><small><span data-t="recorde">recorde</span> <span id="best">0</span></small></div>
 
     <div class="overlay" id="menu">
       <div class="box">
         <h1>Corre Capivara</h1>
-        <p>Toque na tela, aperte espaço ou seta para cima para pular.</p>
-        <button class="primary" id="startBtn">Começar</button>
+        <p data-t="instrucoes">Toque na tela, aperte espaço ou seta para cima para pular.</p>
+        <button class="primary" id="startBtn" data-t="comecar">Começar</button>
       </div>
     </div>
 
     <div class="overlay" id="over" hidden>
       <div class="box">
-        <h2>Bateu!</h2>
-        <p>Você fez <b id="finalScore">0</b> pontos.</p>
-        <button class="reward" id="rewardBtn">▶ Ver anúncio e continuar</button>
-        <button class="ghost" id="againBtn">Jogar de novo</button>
+        <h2 data-t="bateu">Bateu!</h2>
+        <p><span data-t="voceFez">Você fez</span> <b id="finalScore">0</b> <span data-t="pontos">pontos.</span></p>
+        <button class="reward" id="rewardBtn" data-t="continuarAnuncio">▶ Ver anúncio e continuar</button>
+        <button class="ghost" id="againBtn" data-t="jogarDeNovo">Jogar de novo</button>
       </div>
     </div>
 
@@ -40,6 +40,7 @@
   </main>
 
   <script src="src/config.js"></script>
+  <script src="src/textos.js"></script>
   <script src="src/ads.js"></script>
   <script src="src/game.js"></script>
 </body>

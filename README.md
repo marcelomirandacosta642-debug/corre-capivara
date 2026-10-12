@@ -20,6 +20,14 @@ A escolha da rede fica em `src/ads.js`:
 - Em qualquer outro lugar, mostra anúncios simulados.
 - O AdMob (versão Android) entra numa próxima etapa.
 
+## Idiomas
+
+O jogo aparece em português para quem usa o navegador ou o CrazyGames em português, e em inglês para todo o resto (o CrazyGames exige inglês). Os textos ficam em `src/textos.js`.
+
+## Enviar para o CrazyGames
+
+O arquivo enviado é um .zip com `index.html`, `style.css` e a pasta `src`. As três capas exigidas ficam na pasta `capas`.
+
 ## Ajustes fáceis
 
 Os números do jogo (velocidade, pulo, frequência dos anúncios) ficam em `src/config.js`.
@@ -29,5 +37,7 @@ Os números do jogo (velocidade, pulo, frequência dos anúncios) ficam em `src/
 - `index.html`: a página do jogo
 - `style.css`: aparência das telas
 - `src/config.js`: ajustes do jogo
+- `src/textos.js`: textos em português e inglês
 - `src/ads.js`: anúncios
+- `capas/`: imagens de capa para o CrazyGames
 - `src/game.js`: lógica do jogo

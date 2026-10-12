@@ -139,6 +139,7 @@
     if ((e.code === 'Space' || e.code === 'ArrowUp') && estado === 'jogando') { e.preventDefault(); pular(); }
   });
 
-  Ads.iniciar();
+  Textos.aplicar(navigator.language);
+  Ads.iniciar().then(() => { if (Ads.idioma()) Textos.aplicar(Ads.idioma()); });
   requestAnimationFrame(loop);
 })();

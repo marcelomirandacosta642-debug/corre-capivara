@@ -1,4 +1,4 @@
-html, body { height: 100%; margin: 0; background: #151a30; color: #f4efe6; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+html, body { height: 100%; user-select: none; -webkit-user-select: none; -webkit-touch-callout: none; margin: 0; background: #151a30; color: #f4efe6; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
 body { display: grid; place-items: center; padding: env(safe-area-inset-top, 0) 0 env(safe-area-inset-bottom, 0); }
 .stage { position: relative; width: min(100vw, 1000px); touch-action: manipulation; user-select: none; -webkit-user-select: none; }
 canvas { display: block; width: 100%; height: auto; cursor: pointer; }
