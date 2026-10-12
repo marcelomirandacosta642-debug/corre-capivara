@@ -54,7 +54,7 @@
     if (s > recorde) { recorde = s; try { localStorage.setItem('capivara-recorde', recorde); } catch (e) {} }
     $('best').textContent = recorde;
     $('finalScore').textContent = s;
-    $('rewardBtn').hidden = continuacoes >= C.continuarPorPartida;
+    $('rewardBtn').hidden = continuacoes >= C.continuarPorPartida || !Ads.podeRecompensado();
     $('over').hidden = false;
     ($('rewardBtn').hidden ? $('againBtn') : $('rewardBtn')).focus();
   }

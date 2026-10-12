@@ -4,6 +4,9 @@
 window.Ads = (() => {
   let rede = 'simulado';
   let sdk = null;
+  // Fica false se a rede recusar um anúncio recompensado (ex.: CrazyGames
+  // bloqueia anúncios no lançamento básico). Aí o jogo esconde o botão.
+  let recompensadoDisponivel = true;
 
   async function iniciar() {
     try {
@@ -27,7 +30,10 @@ window.Ads = (() => {
       sdk.ad.requestAd(tipo, {
         adStarted: () => {},
         adFinished: () => resolve(true),
-        adError: () => resolve(false),
+        adError: () => {
+          if (tipo === 'rewarded') recompensadoDisponivel = false;
+          resolve(false);
+        },
       });
     });
   }
@@ -70,6 +76,7 @@ window.Ads = (() => {
     partidaComecou,
     partidaParou,
     rede: () => rede,
+    podeRecompensado: () => recompensadoDisponivel,
     // Tela cheia entre partidas. Sempre termina, mesmo se o anúncio falhar.
     intersticial: () => mostrar('midgame'),
     // Retorna true só se o jogador assistiu até o fim e ganhou a recompensa.
